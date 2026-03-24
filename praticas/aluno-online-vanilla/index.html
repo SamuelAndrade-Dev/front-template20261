@@ -1,12 +1,87 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aluno Online</title>
+    <title>Portal do Aluno - Dashboard</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <script type="module" src="/src/main.js"></script>
+    <aside class="sidebar">
+      <header class="sidebar-logo">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
+          alt="Ícone de graduação Aluno Online"
+          width="30"
+        />
+        <strong>Aluno Online</strong>
+      </header>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="#">Notas</a></li>
+          <li><a href="#">Faltas</a></li>
+          <li><a href="#">Boletos</a></li>
+          <li><a href="#">Requerimentos</a></li>
+          <li><a href="#">Sair</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <hgroup>
+          <h1>Olá, Aluno!</h1>
+          <p>Bem-vindo ao portal do aluno</p>
+        </hgroup>
+        <figure class="user-avatar">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="Avatar do usuário"
+            width="50"
+          />
+        </figure>
+      </header>
+
+      <section class="content-grid">
+        <article class="card">
+          <h2>Mural de Avisos</h2>
+          <ul>
+            <li>Inscrição para o projeto de extensão</li>
+            <li>Eleição para representante de turma</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Calendário Acadêmico</h2>
+          <ul class="calendar-list">
+            <li>
+              <time datetime="2026-02-23"><strong>23/02</strong></time> - Início
+              do período 2026-1
+            </li>
+            <li>
+              <time datetime="2026-04-25"><strong>25/04</strong></time> - Prazo
+              final P1
+            </li>
+            <li>
+              <time datetime="2026-06-23"><strong>23/06</strong></time> - Prazo
+              final P2
+            </li>
+            <li>
+              <time datetime="2026-07-04"><strong>04/07</strong></time> - Fim do
+              período
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>Minhas Disciplinas</h2>
+          <ul>
+            <li>BI e Data Warehousing</li>
+            <li>Construção de Frontend</li>
+          </ul>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
