@@ -1,15 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --cor-fundo: #e9e9e9;
   --cor-texto: #303030;
   --cor-primaria: #2c3e50;
   --cor-destaque: #3498db;
-  --branco: #fff;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --branco: #ffffff;
 }
 
 body {
@@ -70,7 +70,7 @@ body {
   background: var(--branco);
   padding: 1rem 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgb(0, 0, 0, 5%);
+  box-shadow: 0 2px 4px rgb(0 0 0 / 5%);
 }
 
 .topbar h1 {
@@ -112,7 +112,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body {
     flex-direction: row;
   }
