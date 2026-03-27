@@ -10,14 +10,6 @@ function Cabecalho() {
 }
 
 function App() {
-  {
-    // <div>
-    //   <Cabecalho></Cabecalho>
-    //   <div> {2 + 2} </div>
-    //   <img src={logo} alt="" />
-    //   <p>O resultado é</p>
-    // </div>
-  }
   return (
     < main >
       <img src={logo} alt="Icone do chapeu de formatura" />
