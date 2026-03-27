@@ -1,7 +1,7 @@
 services:
   app:
     image: node:24
-    container_name: aula01
+    container_name: aulas
     working_dir: /app
     volumes:
       - ./:/app
