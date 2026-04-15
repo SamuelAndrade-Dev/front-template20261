@@ -1,112 +1,44 @@
-<!doctype html>
-<<<<<<< HEAD
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css  " />
-    <title>LOGIN - Aluno Online</title>
-  </head>
-  <body>
-    <main>
-      <form action="">
-        <img src="public/logo copy.svg" alt="Icone do chapéu" />
-        <h1>Aluno Online</h1>
-        <label for="email">E-mail</label>
-        <input type="email" name="email" id="email" />
-        <label for="senha">Senha</label>
-        <input type="password" name="senha" id="senha" />
-        <button type="submit">Entrar</button>
-      </form>
-    </main>
-    <script type="module" src="/src/main.js"></script>
-
-    <footer></footer>
-=======
+<!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal do Aluno - Dashboard</title>
-    <link rel="stylesheet" href="src/style.css" />
-  </head>
-  <body>
-    <aside class="sidebar">
-      <header class="sidebar-logo">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png"
-          alt="Ícone de graduação Aluno Online"
-          width="30"
-        />
-        <strong>Aluno Online</strong>
-      </header>
-      <nav class="sidebar-nav">
-        <ul>
-          <li><a href="#" class="active">Dashboard</a></li>
-          <li><a href="#">Notas</a></li>
-          <li><a href="#">Faltas</a></li>
-          <li><a href="#">Boletos</a></li>
-          <li><a href="#">Requerimentos</a></li>
-          <li><a href="#">Sair</a></li>
-        </ul>
-      </nav>
-    </aside>
+<head>
+  <meta charset="UTF-8">
+  <title>Aluno Online</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
 
-    <main class="main-area">
-      <header class="topbar">
-        <hgroup>
-          <h1>Olá, Aluno!</h1>
-          <p>Bem-vindo ao portal do aluno</p>
-        </hgroup>
-        <figure class="user-avatar">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-            alt="Avatar do usuário"
-            width="50"
-          />
-        </figure>
+  <main>
+    <section>
+      <header>
+        <img src="" alt="">
+        <h1>Aluno Online</h1>
       </header>
 
-      <section class="content-grid">
-        <article class="card">
-          <h2>Mural de Avisos</h2>
-          <ul>
-            <li>Inscrição para o projeto de extensão</li>
-            <li>Eleição para representante de turma</li>
-          </ul>
-        </article>
+      <form id="loginForm" novalidate>
 
-        <article class="card">
-          <h2>Calendário Acadêmico</h2>
-          <ul class="calendar-list">
-            <li>
-              <time datetime="2026-02-23"><strong>23/02</strong></time> - Início
-              do período 2026-1
-            </li>
-            <li>
-              <time datetime="2026-04-25"><strong>25/04</strong></time> - Prazo
-              final P1
-            </li>
-            <li>
-              <time datetime="2026-06-23"><strong>23/06</strong></time> - Prazo
-              final P2
-            </li>
-            <li>
-              <time datetime="2026-07-04"><strong>04/07</strong></time> - Fim do
-              período
-            </li>
-          </ul>
-        </article>
+        <fieldset>
+          <legend>Login</legend>
 
-        <article class="card">
-          <h2>Minhas Disciplinas</h2>
-          <ul>
-            <li>BI e Data Warehousing</li>
-            <li>Construção de Frontend</li>
-          </ul>
-        </article>
-      </section>
-    </main>
->>>>>>> 0684ad29f7e16a183a265538237d8678b539027a
-  </body>
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email">
+          <small id="erroEmail" class="erro"></small>
+
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password">
+          <small id="erroSenha" class="erro"></small>
+
+          <button type="submit">Entrar</button>
+
+        </fieldset>
+
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026. Todos os direitos reservados.</p>
+    </footer>
+  </main>
+
+  <script src="src/main.js"></script>
+</body>
 </html>
