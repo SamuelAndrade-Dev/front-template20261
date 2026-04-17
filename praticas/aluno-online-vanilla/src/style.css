@@ -1,8 +1,7 @@
 :root {
-  --azul-principal: #2f80ed;
-  --azul-hover: #1c60c7;
   --cinza-fundo: #f2f2f2;
   --cinza-borda: #ccc;
+  --black-principal: #141414;
   --texto: #333;
   --erro: #e74c3c;
 }
@@ -66,15 +65,11 @@ button {
   width: 100%;
   padding: 12px;
   margin-top: 20px;
-  background-color: var(--azul-principal);
+  background-color: var(--black-principal);
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: var(--azul-hover);
 }
 
 .erro {
