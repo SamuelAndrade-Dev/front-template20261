@@ -1,0 +1,26 @@
+.app-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 100vh;
+}
+
+.main-layout {
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  padding: 2rem;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    display: none; 
+  }
+}

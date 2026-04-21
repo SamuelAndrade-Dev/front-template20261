@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding-top: 2rem;
+}
+
+nav > ul{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 4rem 2rem; 
+} 
+
+nav > ul > li > a{
+  text-decoration: none;
+  color: black;
+  font-size: 1rem;
+} 
+
