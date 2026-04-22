@@ -1,12 +1,44 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aluno Online</title>
-  </head>
-  <body>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Aluno Online</title>
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+  <main>
+    <section>
+      <header>
+        <img src="" alt="">
+        <h1>Aluno Online</h1>
+      </header>
+
+      <form id="loginForm" novalidate>
+
+        <fieldset>
+          <legend>Login</legend>
+
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email">
+          <small id="erroEmail" class="erro"></small>
+
+          <label for="senha">Senha</label>
+          <input id="senha" name="senha" type="password">
+          <small id="erroSenha" class="erro"></small>
+
+          <button type="submit">Entrar</button>
+
+        </fieldset>
+
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2026. Todos os direitos reservados.</p>
+    </footer>
+  </main>
+
+  <script src="src/main.js"></script>
+</body>
 </html>
