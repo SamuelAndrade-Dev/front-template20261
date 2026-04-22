@@ -4,9 +4,8 @@
     box-sizing: border-box;
 }
 
-header {
+.top-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     padding: 1rem 2rem;
 }
-

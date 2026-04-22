@@ -12,16 +12,17 @@ header {
   padding-top: 2rem;
 }
 
-nav > ul{
+nav > ul {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  padding: 4rem 2rem; 
-} 
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
 
-nav > ul > li > a{
-  text-decoration: none;
+nav > ul > li > button {
   color: black;
   font-size: 1rem;
-} 
-
+  cursor: pointer;
+  border: none;
+  background: none;
+}

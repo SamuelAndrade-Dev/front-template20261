@@ -15,6 +15,17 @@ main {
   flex: 1;
 }
 
+.dynamic-header {
+  position: absolute;
+  top: 0;
+  left: 18.6rem;
+  height: 50px; 
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  z-index: 10;
+}
+
 @media (max-width: 768px) {
   .app-grid {
     grid-template-columns: 1fr;

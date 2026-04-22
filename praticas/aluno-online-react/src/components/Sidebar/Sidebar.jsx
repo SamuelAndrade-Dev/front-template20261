@@ -1,7 +1,8 @@
 import "./Sidebar.css";
 import learn from "../../assets/learn.svg";
 
-function Sidebar() {
+// Recebemos "mudarTela" que enviamos lá no App.jsx
+function Sidebar({ mudarTela }) {
   return (
     <aside className="sidebar">
       <header className="sidebar-brand">
@@ -11,12 +12,26 @@ function Sidebar() {
 
       <nav aria-label="Navegação lateral">
         <ul>
-          <li><a href="#" className="active">Dashboard</a></li>
-          <li><a href="#">Notas</a></li>
-          <li><a href="#">Faltas</a></li>
-          <li><a href="#">Boletos</a></li>
-          <li><a href="#">Requerimentos</a></li>
-          <li><a href="#">Sair</a></li>
+          <li>
+            <button onClick={() => mudarTela("dashboard")}>Dashboard</button>
+          </li>
+          <li>
+            <button onClick={() => mudarTela("notas")}>Notas</button>
+          </li>
+          <li>
+            <button onClick={() => mudarTela("faltas")}>Faltas</button>
+          </li>
+          <li>
+            <button onClick={() => mudarTela("boletos")}>Boletos</button>
+          </li>
+          <li>
+            <button onClick={() => mudarTela("requerimentos")}>
+              Requerimentos
+            </button>
+          </li>
+          <li>
+            <button onClick={() => console.log("Sair")}>Sair</button>
+          </li>
         </ul>
       </nav>
     </aside>
