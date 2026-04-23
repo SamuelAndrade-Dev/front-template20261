@@ -46,7 +46,8 @@ function Requerimentos() {
         </table>
       </article>
     </section>
-    </>)
+    </>
+    );
 }
 
 export default Requerimentos;
