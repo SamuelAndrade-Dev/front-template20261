@@ -1,0 +1,68 @@
+:root {
+  --primary-color: #fff;
+  --secondary-color: #eeeeee;
+  --header-color: #b3b3b3;
+  --border-color: #d1d1d1;
+}
+
+.faltas-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list-text {
+  display: flex;
+}
+
+.page-header {
+  position: absolute;
+  top: 3rem;
+}
+
+.semester-card {
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+
+.semester-header {
+  background-color: var(--header-color);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.semester-header h2 {
+  font-size: 1.1rem;
+}
+
+.faltas-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.faltas-table th,
+.faltas-table td {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.faltas-table th {
+  background-color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.faltas-table tr:last-child td {
+  border-bottom: none;
+}
+
+.faltas-table td:nth-child(2),
+.faltas-table td:nth-child(3),
+.faltas-table th:nth-child(2),
+.faltas-table th:nth-child(3) {
+  text-align: center;
+}
