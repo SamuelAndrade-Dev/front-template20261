@@ -48,7 +48,7 @@ function Requerimentos() {
         </article>
       </section>
     </>
-  );
+  )
 }
 
 export default Requerimentos;
