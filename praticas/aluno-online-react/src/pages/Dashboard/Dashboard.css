@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #0000;
-    --secondary-color: #eeeeee;
-    --header-color: #b3b3b3;
-    --border-color: #d1d1d1;
+  --primary-color: #0000;
+  --secondary-color: #eeeeee;
+  --header-color: #b3b3b3;
+  --border-color: #d1d1d1;
 }
 
 .dashboard-view {
@@ -26,13 +26,13 @@
   border: 1px solid var(--border-color);
   border-radius: 10px;
   background-color: var(--primary-color);
-  overflow: hidden; 
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
 .card-header {
-  background-color: var(--header-color) ;
+  background-color: var(--header-color);
   padding: 12px 20px;
   border-bottom: 1px solid var(--border-color);
   display: flex;

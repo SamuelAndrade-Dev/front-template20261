@@ -1,7 +1,6 @@
 import "./Sidebar.css";
 import learn from "../../assets/learn.svg";
 
-// Recebemos "mudarTela" que enviamos lá no App.jsx
 function Sidebar({ mudarTela }) {
   return (
     <aside className="sidebar">

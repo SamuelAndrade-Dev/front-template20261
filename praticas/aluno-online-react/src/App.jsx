@@ -29,9 +29,9 @@ function App() {
   };
 
   return (
-   <section className="app-grid">
+    <section className="app-grid">
       <Sidebar mudarTela={setTelaAtiva} />
-      
+
       <section className="main-layout">
         <Header />
 
@@ -43,9 +43,7 @@ function App() {
           {telaAtiva === "requerimentos" && <h1>Requerimentos</h1>}
         </header>
 
-        <main className="content-area">
-          {renderizarTela()}
-        </main>
+        <main className="content-area">{renderizarTela()}</main>
       </section>
     </section>
   );

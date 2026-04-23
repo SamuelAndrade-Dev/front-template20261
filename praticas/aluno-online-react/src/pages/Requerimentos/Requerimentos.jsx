@@ -6,7 +6,7 @@ function Requerimentos() {
     <>
       <section className="boletos-view">
         <header className="page-header">
-          <h3>Histórico de Pagamentos</h3>
+          <h3>Faça solicitações online para a secretaria</h3>
         </header>
         <article className="financeiro-card">
           <table className="boletos-table">
@@ -48,7 +48,7 @@ function Requerimentos() {
         </article>
       </section>
     </>
-  )
+  );
 }
 
 export default Requerimentos;

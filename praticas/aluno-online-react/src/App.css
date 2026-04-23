@@ -19,7 +19,7 @@ main {
   position: absolute;
   top: 0;
   left: 18.6rem;
-  height: 50px; 
+  height: 50px;
   display: flex;
   align-items: center;
   padding-left: 2rem;
@@ -30,8 +30,12 @@ main {
   .app-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .sidebar {
-    display: none; 
+    display: none;
+  }
+
+  main {
+    padding: 1rem;
   }
 }
