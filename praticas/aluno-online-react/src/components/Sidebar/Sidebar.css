@@ -1,10 +1,12 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #eeeeee;
+  --header-color: #e0e0e0;
+  --border-color: #d1d1d1;
+  --text-color: #333;
 }
 
-header {
+.sidebar-brand {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +22,7 @@ nav > ul {
 }
 
 nav > ul > li > button {
-  color: black;
+  color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   border: none;

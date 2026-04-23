@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./App.css";
+
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
+
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Notas from "./pages/Notas/Notas";
 import Faltas from "./pages/Faltas/Faltas";
@@ -11,39 +13,49 @@ import Requerimentos from "./pages/Requerimentos/Requerimentos";
 function App() {
   const [telaAtiva, setTelaAtiva] = useState("dashboard");
 
-  const renderizarTela = () => {
-    switch (telaAtiva) {
-      case "dashboard":
-        return <Dashboard />;
-      case "notas":
-        return <Notas />;
-      case "faltas":
-        return <Faltas />;
-      case "boletos":
-        return <Boletos />;
-      case "requerimentos":
-        return <Requerimentos />;
-      default:
-        return <Dashboard />;
-    }
+  const paginas = {
+    dashboard: {
+      title: "Olá, Aluno!",
+      subtitle: "Bem-vindo ao portal do aluno",
+      component: <Dashboard />,
+    },
+    notas: {
+      title: "Minhas Notas",
+      subtitle: "Histórico de notas por semestre",
+      component: <Notas />,
+    },
+    faltas: {
+      title: "Minhas Faltas",
+      subtitle: "Histórico de faltas por semestre",
+      component: <Faltas />,
+    },
+    boletos: {
+      title: "Financeiro",
+      subtitle: "Histórico de pagamentos",
+      component: <Boletos />,
+    },
+    requerimentos: {
+      title: "Requerimentos",
+      subtitle: "Solicitações acadêmicas",
+      component: <Requerimentos />,
+    },
   };
+
+  const paginaAtual = paginas[telaAtiva];
 
   return (
     <section className="app-grid">
       <Sidebar mudarTela={setTelaAtiva} />
 
       <section className="main-layout">
-        <Header />
+        <Header
+          title={paginaAtual.title}
+          subtitle={paginaAtual.subtitle}
+        />
 
-        <header className="dynamic-header">
-          {telaAtiva === "dashboard" && <h1>Olá, Aluno!</h1>}
-          {telaAtiva === "notas" && <h1>Minhas Notas</h1>}
-          {telaAtiva === "faltas" && <h1>Minhas Faltas</h1>}
-          {telaAtiva === "boletos" && <h1>Financeiro</h1>}
-          {telaAtiva === "requerimentos" && <h1>Requerimentos</h1>}
-        </header>
-
-        <main className="content-area">{renderizarTela()}</main>
+        <main className="content-area">
+          {paginaAtual.component}
+        </main>
       </section>
     </section>
   );

@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #eeeeee;
+  --header-color: #e0e0e0;
+  --border-color: #d1d1d1;
+  --text-color: #333;
+}
+
+.tabela-requerimentos {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-top: 20px;
+}
+
+.tabela-requerimentos th {
+  background-color: var(--header-color);
+  color: var(--text-color);
+  padding: 15px 20px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.tabela-requerimentos td {
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.tabela-requerimentos tr:hover {
+  background-color: var(--secondary-color);
+}

@@ -1,7 +1,17 @@
 import "./Sidebar.css";
+import SidebarItem from "./SidebarItem/SidebarItem";
 import learn from "../../assets/learn.svg";
 
 function Sidebar({ mudarTela }) {
+  const itens = [
+    { texto: "Dashboard", rota: "dashboard" },
+    { texto: "Notas", rota: "notas" },
+    { texto: "Faltas", rota: "faltas" },
+    { texto: "Boletos", rota: "boletos" },
+    { texto: "Requerimentos", rota: "requerimentos" },
+    { texto: "Sair", rota: "sair" }
+  ];
+
   return (
     <aside className="sidebar">
       <header className="sidebar-brand">
@@ -11,26 +21,17 @@ function Sidebar({ mudarTela }) {
 
       <nav aria-label="Navegação lateral">
         <ul>
-          <li>
-            <button onClick={() => mudarTela("dashboard")}>Dashboard</button>
-          </li>
-          <li>
-            <button onClick={() => mudarTela("notas")}>Notas</button>
-          </li>
-          <li>
-            <button onClick={() => mudarTela("faltas")}>Faltas</button>
-          </li>
-          <li>
-            <button onClick={() => mudarTela("boletos")}>Boletos</button>
-          </li>
-          <li>
-            <button onClick={() => mudarTela("requerimentos")}>
-              Requerimentos
-            </button>
-          </li>
-          <li>
-            <button onClick={() => console.log("Sair")}>Sair</button>
-          </li>
+          {itens.map((item) => (
+            <SidebarItem
+              key={item.texto}
+              texto={item.texto}
+              acao={() =>
+                item.rota === "sair"
+                  ? console.log("Sair")
+                  : mudarTela(item.rota)
+              }
+            />
+          ))}
         </ul>
       </nav>
     </aside>

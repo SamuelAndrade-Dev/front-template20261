@@ -1,75 +1,23 @@
-import React from "react";
+import TabelaFaltas from "../../components/TabelaFaltas/TabelaFaltas";
 import "./Faltas.css";
 
 function Faltas() {
+  const dados2026 = [
+    { disciplina: "BI e Data Warehousing", totalFaltas: 0, presenca: "100%" },
+    { disciplina: "Construção de Frontend", totalFaltas: 0, presenca: "100%" },
+    { disciplina: "Manutenção de Software e Devops", totalFaltas: 0, presenca: "100%" }
+  ];
+
+  const dados2025 = [
+    { disciplina: "Construção de Backend", totalFaltas: 27, presenca: "87.5%" },
+    { disciplina: "Estrutura de Dados", totalFaltas: 9, presenca: "85%" },
+    { disciplina: "Gerenciamento de Projetos", totalFaltas: 10.5, presenca: "82.5%" }
+  ];
+
   return (
     <section className="faltas-view">
-      <header className="page-header">
-        <h3>Histórico de Faltas por Semestre</h3>
-      </header>
-      <article className="semester-card">
-        <header className="semester-header">
-          <h2>2026.1</h2>
-        </header>
-        <table className="faltas-table">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>Total de Faltas</th>
-              <th>% de Presença</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BI e Data Warehousing</td>
-              <td>0</td>
-              <td>100%</td>
-            </tr>
-            <tr>
-              <td>Construção de Frontend</td>
-              <td>0</td>
-              <td>100%</td>
-            </tr>
-            <tr>
-              <td>Manutenção de Software e Devops</td>
-              <td>0</td>
-              <td>100%</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article className="semester-card">
-        <header className="semester-header">
-          <h2>2025.2</h2>
-        </header>
-        <table className="faltas-table">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>Total de Faltas</th>
-              <th>% de Presença</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Construção de Backend</td>
-              <td>27</td>
-              <td>87.5%</td>
-            </tr>
-            <tr>
-              <td>Estrutura de Dados</td>
-              <td>9</td>
-              <td>85%</td>
-            </tr>
-            <tr>
-              <td>Gerenciamento de Projetos</td>
-              <td>10.5</td>
-              <td>82.5%</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
+      <TabelaFaltas semestre="2026.1" dados={dados2026} />
+      <TabelaFaltas semestre="2025.2" dados={dados2025} />
     </section>
   );
 }

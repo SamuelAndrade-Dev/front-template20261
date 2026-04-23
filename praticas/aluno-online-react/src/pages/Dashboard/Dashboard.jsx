@@ -1,55 +1,38 @@
-import React from "react";
+import Card from "../../components/Card/Card";
 import "./Dashboard.css";
 
 function Dashboard() {
   return (
-    <section className="dashboard-view">
-      <header className="page-header">
-        <h3>Bem Vindo ao portal do aluno</h3>
-      </header>
+    <main className="dashboard-view">
       <section className="card-grid">
-        <article className="card">
-          <header className="card-header">
-            <h2>Mural de Avisos</h2>
-          </header>
-          <ul className="card-list">
-            <li>Inscrição para o projeto de extensão</li>
-            <li>Eleição para representante de turma</li>
-          </ul>
-        </article>
+        <Card
+          titulo="Mural de Avisos"
+          conteudo={[
+            "Inscrição para o projeto de extensão",
+            "Eleição para representante de turma",
+          ]}
+        />
 
-        <article className="card">
-          <header className="card-header">
-            <h2>Calendário Acadêmico</h2>
-          </header>
-          <ul className="card-list">
-            <li>
-              <strong>23/02</strong> - Início do período letivo 2026-1
-            </li>
-            <li>
-              <strong>25/04</strong> - Prazo final para aplicação da P1
-            </li>
-            <li>
-              <strong>23/06</strong> - Prazo final para aplicação da P2
-            </li>
-            <li>
-              <strong>04/07</strong> - Fim do período letivo 2026-1
-            </li>
-          </ul>
-        </article>
+        <Card
+          titulo="Calendário Acadêmico"
+          conteudo={[
+            "23/02 - Início do período letivo 2026-1",
+            "25/04 - Prazo final para aplicação da P1",
+            "23/06 - Prazo final para aplicação da P2",
+            "04/07 - Fim do período letivo 2026-1",
+          ]}
+        />
 
-        <article className="card">
-          <header className="card-header">
-            <h2>Minhas Disciplinas</h2>
-          </header>
-          <ul className="card-list">
-            <li>BI e Data Warehousing</li>
-            <li>Construção de Frontend</li>
-            <li>Arquitetura de Software e Devops</li>
-          </ul>
-        </article>
+        <Card
+          titulo="Minhas Disciplinas"
+          conteudo={[
+            "BI e Data Warehousing",
+            "Construção de Frontend",
+            "Arquitetura de Software",
+          ]}
+        />
       </section>
-    </section>
+    </main>
   );
 }
 

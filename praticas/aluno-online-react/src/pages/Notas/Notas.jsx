@@ -1,91 +1,31 @@
 import React from "react";
 import "./Notas.css";
+import TabelaNotas from "../../components/TabelaNotas/TabelaNotas";
 
 function Notas() {
+  const minhasNotas = [
+    { disciplina: "Construção de Frontend", a1: 8.5, a2: 9.0, media: 8.8 },
+    { disciplina: "BI e Data Warehousing", a1: 7.0, a2: 6.5, media: 6.8 },
+    { disciplina: "Arquitetura de Software", a1: 5.0, a2: 4.0, media: 4.5 },
+  ];
+
+  const notasDisciplinas = [
+    { disciplina: "Construção de BackEnd", a1: 8.5, a2: 9.0, media: 8.8 },
+    { disciplina: "Estrutura de Dados", a1: 7.0, a2: 6.5, media: 6.8 },
+    { disciplina: "Gerenciamento de Projetos", a1: 5.0, a2: 4.0, media: 4.5 },
+  ];
+
+  const notasSemestre = [
+    { disciplina: "Banco de Dados", a1: 8.5, a2: 9.0, media: 8.8 },
+    { disciplina: "Programação", a1: 7.0, a2: 6.5, media: 6.8 },
+    { disciplina: "Desenvolvimento Web", a1: 5.0, a2: 4.0, media: 4.5 },
+  ];
+
   return (
     <section className="notas-view">
-      <header className="page-header">
-        <h3>Histórico de Notas por Semestre</h3>
-      </header>
-      <article className="semester-card">
-        <header className="semester-header">
-          <h2>2026.1</h2>
-        </header>
-        <table className="notas-table">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>A1</th>
-              <th>A2</th>
-              <th>A3</th>
-              <th>Menção</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BI e Data Warehousing</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>SR</td>
-            </tr>
-            <tr>
-              <td>Construção de Frontend</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>SR</td>
-            </tr>
-            <tr>
-              <td>Manutenção de Software e Devops</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>SR</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
-
-      <article className="semester-card">
-        <header className="semester-header">
-          <h2>2025.2</h2>
-        </header>
-        <table className="notas-table">
-          <thead>
-            <tr>
-              <th>Disciplina</th>
-              <th>A1</th>
-              <th>A2</th>
-              <th>A3</th>
-              <th>Menção</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Construção de Backend</td>
-              <td>5.4</td>
-              <td>6.2</td>
-              <td></td>
-              <td>MM</td>
-            </tr>
-            <tr>
-              <td>Estrutura de Dados</td>
-              <td>6.3</td>
-              <td>6.1</td>
-              <td></td>
-              <td>MM</td>
-            </tr>
-            <tr>
-              <td>Gerenciamento de Projetos</td>
-              <td>7.4</td>
-              <td>7.1</td>
-              <td></td>
-              <td>MS</td>
-            </tr>
-          </tbody>
-        </table>
-      </article>
+      <TabelaNotas dados={minhasNotas} />
+      <TabelaNotas dados={notasDisciplinas} />
+      <TabelaNotas dados={notasSemestre} />
     </section>
   );
 }
