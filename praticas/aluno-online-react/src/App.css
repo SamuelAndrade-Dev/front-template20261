@@ -1,0 +1,46 @@
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #eeeeee;
+  --header-color: #e0e0e0;
+  --border-color: #d1d1d1;
+  --text-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  width: 100%;
+}
+
+.content-area {
+  padding: 0 40px 40px;
+  width: 100%;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .content-area {
+    padding: 20px;
+  }
+}
