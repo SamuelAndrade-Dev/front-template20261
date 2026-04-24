@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Login.css';
-import Learn from '../assets/learn.svg';
-import Input from '../components/Input/Input'; 
+import Learn from "../../assets/learn.svg";
+import Input from '../../components/Input/Input'; 
 
 function Login() {
   const [email, setEmail] = useState('');
