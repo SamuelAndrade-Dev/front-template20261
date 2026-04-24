@@ -1,12 +1,9 @@
+import { useState } from "react";
 import "./App.css";
 import Login from "./pages/Login";
 
 function App() {
-  return <>
-    <section>
-      <Login />
-    </section>
-  </>;
+  return <></>;
 }
 
 export default App;
