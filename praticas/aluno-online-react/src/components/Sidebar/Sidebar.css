@@ -21,10 +21,24 @@ nav > ul {
   padding: 4rem 2rem;
 }
 
-nav > ul > li > button {
+nav a {
+  text-decoration: none;
+}
+
+nav > ul > li {
   color: var(--text-color);
   font-size: 1rem;
   cursor: pointer;
   border: none;
   background: none;
+  text-decoration: none;
+  list-style: none;
+}
+
+.active {
+  background-color: var(--secondary-color);
+  color: #000;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 0.5rem;
 }
