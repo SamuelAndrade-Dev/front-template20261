@@ -1,0 +1,14 @@
+{
+  "produtos": [
+    {
+      "nome": "Banana",
+      "preco": "9",
+      "unidade": "Kg",
+      "id": "HBwuHc_IOOo"
+    }
+  ],
+  "fornecedores": [],
+  "pedidos": [],
+  "usuarios": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}

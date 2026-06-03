@@ -7,8 +7,20 @@ import Notas from "./pages/Notas/Notas";
 import Faltas from "./pages/Faltas/Faltas";
 import Boletos from "./pages/Boletos/Boletos";
 import Requerimentos from "./pages/Requerimentos/Requerimentos";
+import Login from "./pages/Login";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
+  const { autenticado } = useAuth();
+
+  if (!autenticado) {
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Navigate to="/login" />} />
+      </Routes>
+    );
+  }
   return (
     <section className="app-grid">
       <Sidebar />
