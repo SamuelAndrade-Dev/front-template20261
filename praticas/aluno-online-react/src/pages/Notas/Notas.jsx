@@ -1,32 +1,19 @@
-import "./Notas.css";
-import TabelaNotas from "../../components/TabelaNotas/TabelaNotas";
+import Layout from "../Layout";
+import Tabela from "../../components/Tabela/Tabela";
 
-function Notas() {
-  const minhasNotas = [
-    { disciplina: "Construção de Frontend", a1: 8.5, a2: 9.0, media: 8.8 },
-    { disciplina: "BI e Data Warehousing", a1: 7.0, a2: 6.5, media: 6.8 },
-    { disciplina: "Arquitetura de Software", a1: 5.0, a2: 4.0, media: 4.5 },
-  ];
-
-  const notasDisciplinas = [
-    { disciplina: "Construção de BackEnd", a1: 8.5, a2: 9.0, media: 8.8 },
-    { disciplina: "Estrutura de Dados", a1: 7.0, a2: 6.5, media: 6.8 },
-    { disciplina: "Gerenciamento de Projetos", a1: 5.0, a2: 4.0, media: 4.5 },
-  ];
-
-  const notasSemestre = [
-    { disciplina: "Banco de Dados", a1: 8.5, a2: 9.0, media: 8.8 },
-    { disciplina: "Programação", a1: 7.0, a2: 6.5, media: 6.8 },
-    { disciplina: "Desenvolvimento Web", a1: 5.0, a2: 4.0, media: 4.5 },
+export default function Notas() {
+  const colunas = ["Disciplina", "A1", "A2", "A3", "Menção"];
+  const dados = [
+    { nome: "BI e Data Warehousing", a1: "-", a2: "-", a3: "-", mencao: "SR" },
+    { nome: "Construção de Frontend", a1: "-", a2: "-", a3: "-", mencao: "SR" },
+    { nome: "Manutenção de Software e Devops", a1: "-", a2: "-", a3: "-", mencao: "SR" }
   ];
 
   return (
-    <section className="notas-view">
-      <TabelaNotas dados={minhasNotas} />
-      <TabelaNotas dados={notasDisciplinas} />
-      <TabelaNotas dados={notasSemestre} />
-    </section>
+    <Layout 
+      subtitulo="Histórico de Notas por Semestre"
+    >
+      <Tabela colunas={colunas} dados={dados} />
+    </Layout>
   );
 }
-
-export default Notas;
