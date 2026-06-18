@@ -1,19 +1,14 @@
-import React from "react";
-import "./Card.css";
+import './Card.css';
 
-function Card (props) {
-    return(
-        <article className="card-informativo">
-            <header>
-                <h3>{props.titulo}</h3>
-            </header>
-                <ul>
-                    {props.conteudo.map((item, index) => (
-                        <li key={index}>{item}</li>
-                    ))}
-                </ul>
-        </article>
-    )
+export default function Card({ titulo, children }) {
+  return (
+    <article className="info-card">
+      <header className="info-card-header">
+        <h3>{titulo}</h3>
+      </header>
+      <section className="info-card-content">
+        {children}
+      </section>
+    </article>
+  );
 }
-
-export default Card;
