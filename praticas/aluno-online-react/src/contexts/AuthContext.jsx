@@ -1,34 +1,58 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { AuthContext } from './createAuthContext.js';
+import * as authService from '../services/authService.js';
 
-function obterUsuarioSalvo() {
-  const usuarioSalvo = localStorage.getItem('usuario');
-  return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+function obterAuthSalvo() {
+  const authSalvo = localStorage.getItem('auth');
+  return authSalvo ? JSON.parse(authSalvo) : null;
 }
 
 export function AuthProvider({ children }) {
-  const [usuario, setUsuario] = useState(obterUsuarioSalvo);
+  const [auth, setAuth] = useState(obterAuthSalvo);
 
-  const autenticado = usuario !== null;
+  const autenticado = auth !== null && !!auth.token;
 
-  const login = (dadosUsuario) => {
-    setUsuario(dadosUsuario || {});
-    localStorage.setItem('usuario', JSON.stringify(dadosUsuario || {}));
+  const login = async (email, senha) => {
+    // allow passing an already-obtained auth object
+    if (email && typeof email === 'object' && email.token) {
+      setAuth(email);
+      localStorage.setItem('auth', JSON.stringify(email));
+      return;
+    }
+
+    const resultado = await authService.login(email, senha);
+    const payload = { user: resultado.user, token: resultado.token };
+    setAuth(payload);
+    localStorage.setItem('auth', JSON.stringify(payload));
   };
 
   const logout = () => {
-    setUsuario(null);
-    localStorage.removeItem('usuario');
+    setAuth(null);
+    localStorage.removeItem('auth');
   };
+
+  useEffect(() => {
+    function onUnauthorized() {
+      // clear local state and redirect to login
+      setAuth(null);
+      localStorage.removeItem('auth');
+      window.history.replaceState(null, '', '/login');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    }
+
+    window.addEventListener('app:unauthorized', onUnauthorized);
+    return () => window.removeEventListener('app:unauthorized', onUnauthorized);
+  }, []);
 
   const value = useMemo(
     () => ({
       autenticado,
-      usuario,
+      usuario: auth ? auth.user : null,
+      token: auth ? auth.token : null,
       login,
       logout,
     }),
-    [autenticado, usuario]
+    [autenticado, auth]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
