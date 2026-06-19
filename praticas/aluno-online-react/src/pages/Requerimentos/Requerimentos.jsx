@@ -1,7 +1,7 @@
 import Layout from "../Layout";
 import Tabela from "../../components/Tabela/Tabela";
 
-export default function Requerimentos() {
+export default function Requerimentos({ onCreate }) {
   const colunas = ["Tipo de Requerimento", "Data de Solicitação", "Situação"];
   const dados = [
     { tipo: "Revisão de Menção", data: "15/12/2025", status: "Indeferido" },
@@ -13,6 +13,15 @@ export default function Requerimentos() {
     <Layout 
       subtitulo="Faça solicitações online para a secretaria"
     >
+      <div style={{ marginBottom: '20px' }}>
+        <button
+          type="button"
+          className="primary-button"
+          onClick={() => onCreate?.()}
+        >
+          ➕ Novo Requerimento
+        </button>
+      </div>
       <Tabela colunas={colunas} dados={dados} />
     </Layout>
   );

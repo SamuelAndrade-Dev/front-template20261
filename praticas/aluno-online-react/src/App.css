@@ -25,6 +25,19 @@
   gap: 20px;
 }
 
+.primary-button {
+  padding: 10px 18px;
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.primary-button:hover {
+  opacity: 0.95;
+}
+
 @media (max-width: 768px) {
   .app-container {
     display: block;

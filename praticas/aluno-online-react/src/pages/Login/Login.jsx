@@ -59,10 +59,8 @@ export default function Login() {
       email: email.trim(),
     });
 
-    // Aguarda um pequeno delay para o estado atualizar
-    setTimeout(() => {
-      window.location.href = '/';
-    }, 100);
+    window.history.replaceState(null, '', '/');
+    window.dispatchEvent(new PopStateEvent('popstate'));
   };
 
 
