@@ -47,6 +47,22 @@
       "status": "Pendente",
       "criadoEm": "2026-06-02T22:57:56.148Z",
       "id": "QGyU-6-FQYU"
+    },
+    {
+      "tipo": "Revisão de Menção",
+      "descricao": "teste 123 222",
+      "data": "2026-06-11",
+      "status": "Pendente",
+      "criadoEm": "2026-06-11T22:52:54.188Z",
+      "id": "iPiPFaAB4Rk"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nome": "Marcus",
+      "email": "marcus@email.com",
+      "senha": "senha123"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

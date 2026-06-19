@@ -49,18 +49,19 @@ export default function Login() {
 
   const { login } = useAuth();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const valido = validarDados();
     if (!valido) return;
 
-    login({
-      email: email.trim(),
-    });
-
-    window.history.replaceState(null, '', '/');
-    window.dispatchEvent(new PopStateEvent('popstate'));
+    try {
+      await login(email.trim(), password);
+      window.history.replaceState(null, '', '/');
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    } catch {
+      setErrorPassword('Email ou senha inválidos.');
+    }
   };
 
 
