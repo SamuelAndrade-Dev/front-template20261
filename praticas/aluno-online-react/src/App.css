@@ -1,14 +1,20 @@
 .app-container {
   display: flex;
+.app-container {
+  display: flex;
   min-height: 100vh;
   width: 100%;
 }
 
 .main-content {
+.main-content {
   flex: 1;
+  background-color: #fff;
   background-color: #fff;
 }
 
+.page-padding {
+  padding: 0 40px 40px 40px;
 .page-padding {
   padding: 0 40px 40px 40px;
 }
@@ -39,6 +45,13 @@
 }
 
 @media (max-width: 768px) {
+  .app-container {
+    display: block;
+  }
+  .page-padding {
+    padding: 0 20px 20px 20px;
+  }
+  .dashboard-grid {
   .app-container {
     display: block;
   }
