@@ -2,14 +2,19 @@ import './Sidebar.css';
 import learnLogo from '../../assets/learn.svg';
 import { useAuth } from '../../contexts/useAuth.js';
 
-function Sidebar() {
-  const { logout } = useAuth();
-  const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/login", { replace: true });
-  };
+export default function Sidebar({ setPagina, paginaAtiva, onNavigate }) {
+  const { logout } = useAuth();
+
+  const menus = [
+    { id: 'dashboard', label: 'Dashboard', route: '/dashboard' },
+    { id: 'notas', label: 'Notas', route: '/notas' },
+    { id: 'faltas', label: 'Faltas', route: '/faltas' },
+    { id: 'boletos', label: 'Boletos', route: '/boletos' },
+    { id: 'requerimentos', label: 'Requerimentos', route: '/requerimentos' },
+    { id: 'logout', label: 'Sair', route: null },
+  ];
+
   return (
     <aside className="sidebar-container">
       <header className="sidebar-header">
@@ -18,12 +23,28 @@ function Sidebar() {
       </header>
       <nav className="sidebar-nav">
         <ul>
-          <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink></li>
-          <li><NavLink to="/boletos" className={({ isActive }) => isActive ? 'active' : ''}>Boletos</NavLink></li>
-          <li><NavLink to="/faltas" className={({ isActive }) => isActive ? 'active' : ''}>Faltas</NavLink></li>
-          <li><NavLink to="/notas" className={({ isActive }) => isActive ? 'active' : ''}>Notas</NavLink></li>
-          <li><NavLink to="/requerimentos" className={({ isActive }) => isActive ? 'active' : ''}>Requerimentos</NavLink></li>
-          <li><button className="logout-button" type="button" onClick={handleLogout}>Sair</button></li>
+          {menus.map((m) => (
+            <li key={m.id}>
+              <button
+                    className={paginaAtiva === m.id || (m.id === 'requerimentos' && paginaAtiva === 'requerimentos-new') ? 'active' : ''}
+                onClick={() => {
+                  if (m.id === 'logout') {
+                    logout();
+                    window.location.pathname = '/login';
+                    return;
+                  }
+
+                      if (onNavigate && m.route) {
+                        onNavigate(m.route);
+                      } else {
+                        setPagina(m.id);
+                      }
+                }}
+              >
+                • {m.label}
+              </button>
+            </li>
+          ))}
         </ul>
       </nav>
     </aside>

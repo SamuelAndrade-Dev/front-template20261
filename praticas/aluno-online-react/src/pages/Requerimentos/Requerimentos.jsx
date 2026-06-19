@@ -1,18 +1,28 @@
-import TabelaRequerimentos from "../../components/TabelaRequerimentos/TabelaRequerimentos";
-import "./Requerimentos.css";
+import Layout from "../Layout";
+import Tabela from "../../components/Tabela/Tabela";
 
-function Requerimentos() {
-  const dadosRequerimentos = [
-    { tipo: "Revisão de Menção", data: "15/12/2025", situacao: "Indeferido" },
-    { tipo: "Dispensa de Disciplina", data: "12/06/2025", situacao: "Indeferido" },
-    { tipo: "Trancamento de Matrícula", data: "05/01/2024", situacao: "Deferido" },
-    { tipo: "Mudança de Turno", data: "10/10/2023", situacao: "Deferido" },
-    { tipo: "Renovação de Matrícula", data: "20/02/2023", situacao: "Deferido" },
+export default function Requerimentos({ onCreate }) {
+  const colunas = ["Tipo de Requerimento", "Data de Solicitação", "Situação"];
+  const dados = [
+    { tipo: "Revisão de Menção", data: "15/12/2025", status: "Indeferido" },
+    { tipo: "Dispensa de Disciplina", data: "12/06/2025", status: "Indeferido" },
+    { tipo: "Trancamento de Matrícula", data: "05/01/2024", status: "Deferido" }
   ];
 
   return (
-    <section className="requerimentos-view">
-      <TabelaRequerimentos dados={dadosRequerimentos} />
-    </section>
+    <Layout 
+      subtitulo="Faça solicitações online para a secretaria"
+    >
+      <div style={{ marginBottom: '20px' }}>
+        <button
+          type="button"
+          className="primary-button"
+          onClick={() => onCreate?.()}
+        >
+          ➕ Novo Requerimento
+        </button>
+      </div>
+      <Tabela colunas={colunas} dados={dados} />
+    </Layout>
   );
 }

@@ -4,6 +4,7 @@ import AppSite from './AppSite';
 import Login from './pages/Login/Login';
 import { useAuth } from './contexts/useAuth.js';
 
+
 export default function Router() {
   const [path, setPath] = useState(window.location.pathname);
   const { autenticado } = useAuth();
@@ -20,3 +21,6 @@ export default function Router() {
 
   return <AppSite currentPath={path} onPathChange={setPath} />;
 }
+
+
+
