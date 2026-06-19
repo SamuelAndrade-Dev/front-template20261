@@ -48,6 +48,10 @@ export default function AppSite({ currentPath, onPathChange }) {
     }
   };
 
+  const handleRequerimentoSucesso = () => {
+    navegar('/requerimentos');
+  };
+
   const renderConteudo = () => {
     switch (paginaAtiva) {
       case 'dashboard': return <Dashboard />;
@@ -55,7 +59,7 @@ export default function AppSite({ currentPath, onPathChange }) {
       case 'faltas': return <Faltas />;
       case 'boletos': return <Boletos />;
       case 'requerimentos': return <Requerimentos onCreate={() => navegar('/requerimentos/novo')} />;
-      case 'requerimentos-new': return <RequerimentoForm onCancel={() => navegar('/requerimentos')} />;
+      case 'requerimentos-new': return <RequerimentoForm onCancel={() => navegar('/requerimentos')} onSucesso={handleRequerimentoSucesso} />;
       default: return <Dashboard />;
     }
   };
