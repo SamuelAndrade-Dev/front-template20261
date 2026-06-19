@@ -1,21 +1,17 @@
-import "./Header.css";
-import avatar from "../../assets/avatar.svg";
-import { useAuth } from "../../contexts/AuthContext";
+import './Header.css';
+import avatarIcon from '../../assets/avatar.svg';
+import { useAuth } from '../../contexts/useAuth.js';
 
-function Header({ title, subtitle }) {
+export default function Header({ title }) {
   const { usuario } = useAuth();
-  return (
-    <header className="top-header">
-      <section className="header-text">
-        <h2>{title}</h2>
-        <h3>{subtitle ?? ""} {usuario?.nome ? `- ${usuario.nome}` : ""}</h3>
-      </section>
 
-      <figure className="perfil">
-        <img src={avatar} alt="Foto do perfil do aluno" />
+  return (
+    <header className="page-header">
+      <h2 className="title">{title}</h2>
+      <figure className="profile-container">
+        <img src={avatarIcon} alt="Avatar" className="avatar-img" />
+        {usuario && <span className="user-name">{usuario.email}</span>}
       </figure>
     </header>
   );
 }
-
-export default Header;
